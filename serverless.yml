@@ -1,0 +1,31 @@
+service: serverless-puppeteer-layers
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+
+custom:
+  apigwBinary:
+    types:
+      - 'image/png'
+
+functions:
+  puppeteer-orchestrator:
+    handler: handler.index
+    events:
+      - http:
+          method: GET
+          path: /screenshot
+          contentHandling: CONVERT_TO_BINARY
+    layers:
+      - {Ref: ChromeLambdaLayer}
+
+layers:
+  chrome:
+    path: layer
+
