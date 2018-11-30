@@ -1,5 +1,4 @@
 'use strict';
-const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 module.exports.index = async (event, context) => {
