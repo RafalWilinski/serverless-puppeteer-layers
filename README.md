@@ -4,6 +4,8 @@ Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018
 
 This project example returns a screenshot of page requested via `?address=` query parameter.
 
+![Demo](assets/demo.png?raw=true "Demo")
+
 ### Usage
 ```sh
 serverless deploy
