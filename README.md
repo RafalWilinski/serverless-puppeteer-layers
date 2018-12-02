@@ -13,3 +13,4 @@ serverless deploy
 curl <DEPLOYED_ENDPOINT>?address=https://google.com
 ```
 
+or apply this ARN to your function directly: `arn:aws:lambda:us-east-1:085108115628:layer:chrome:6`
