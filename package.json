@@ -1,0 +1,25 @@
+{
+  "name": "serverless-puppeteer-layers",
+  "version": "1.0.0",
+  "description": "Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-lambda-now-supports-custom-runtimes-and-layers/) which enables sharing common code between functions and working with large dependencies (such as headless chrome) much easier.",
+  "main": "handler.js",
+  "dependencies": {
+    "puppeteer": "^1.11.0",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-apigwy-binary": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafalWilinski/serverless-puppeteer-layers.git"
+  },
+  "author": "Rafal Wilinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RafalWilinski/serverless-puppeteer-layers/issues"
+  },
+  "homepage": "https://github.com/RafalWilinski/serverless-puppeteer-layers#readme"
+}
