@@ -7,6 +7,17 @@ This project example returns a screenshot of page requested via `?address=` quer
 ![Demo](assets/demo.gif?raw=true "Demo")
 
 ### Usage
+
+It is very important to tell NPM to skip installing chromium from `puppeteer` package. To do so, installing dependencies should be done using this command: 
+
+```sh
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm install
+```
+
+Without this, your function size would be more than 200MB which is way too much.
+
+After that, you can simply deploy your funciton.
+
 ```sh
 serverless deploy
 
