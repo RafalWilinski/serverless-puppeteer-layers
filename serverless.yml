@@ -12,7 +12,7 @@ plugins:
 custom:
   apigwBinary:
     types:
-      - 'image/png'
+      - '*/*'
 
 functions:
   puppeteer-orchestrator:
