@@ -29,3 +29,7 @@ layers:
   chrome:
     path: layer
 
+package:
+  exclude:
+    - node_modules/puppeteer/.local-chromium/**    
+
