@@ -12,5 +12,6 @@ tar --directory nodejs/node_modules/chrome-aws-lambda/ --extract --file chrome-a
 rm chrome-aws-lambda-*.tgz
 
 find bin -name "chromium-*" -exec mv {} ../layer/headless_shell \;
+chmod 755 ../layer/headless_shell
 
 echo 'Layer created successfully!'
