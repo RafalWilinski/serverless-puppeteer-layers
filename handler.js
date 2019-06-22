@@ -18,6 +18,8 @@ module.exports.index = async (event, context) => {
     encoding: 'base64'
   });
 
+  browser.close();
+
   return {
     statusCode: 200,
     body: image,
