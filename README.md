@@ -31,3 +31,15 @@ curl <DEPLOYED_ENDPOINT>?address=https://google.com
 ```
 
 or apply this ARN to your function directly: `arn:aws:lambda:us-east-1:085108115628:layer:chrome:6`
+
+### Bundling latest Chromium on your own
+
+Prerequisites:
+
+- `brotli`
+
+```sh
+./download-latest.sh
+```
+
+Credits for this solution go to [San Kumar](https://github.com/san-kumar)
