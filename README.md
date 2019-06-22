@@ -1,6 +1,13 @@
 # Serverless Puppeteer using AWS Lambda Layers
 
-Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-lambda-now-supports-custom-runtimes-and-layers/) which enables sharing common code between functions and working with large dependencies (such as headless chrome) much easier.
+<p>
+  <img src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://twitter.com/rafalwilinski">
+    <img alt="Twitter: rafalwilinski" src="https://img.shields.io/twitter/follow/rafalwilinski.svg?style=social" target="_blank" />
+  </a>
+</p>
+
+> Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-lambda-now-supports-custom-runtimes-and-layers/) which enables sharing common code between functions and working with large dependencies (such as headless chrome) much easier.
 
 This project example returns a screenshot of page requested via `?address=` query parameter.
 
@@ -43,3 +50,14 @@ Prerequisites:
 ```
 
 Credits for this solution go to [San Kumar](https://github.com/san-kumar)
+
+### Author
+
+👤 **Rafal Wilinski**
+
+- Twitter: [@rafalwilinski](https://twitter.com/rafalwilinski)
+- Github: [@RafalWilinski](https://github.com/RafalWilinski)
+
+### Show your support
+
+Give a ⭐️ if this project helped you!
