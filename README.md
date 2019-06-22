@@ -4,11 +4,14 @@ Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018
 
 This project example returns a screenshot of page requested via `?address=` query parameter.
 
-![Demo](assets/demo.gif?raw=true "Demo")
+![Demo](assets/demo.gif?raw=true 'Demo')
 
 ### Usage
+
 ```sh
-serverless deploy
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn # This will NOT install headless chrome from Puppeteer library, we want it from layer instead
+
+sls deploy
 
 curl <DEPLOYED_ENDPOINT>?address=https://google.com
 ```
