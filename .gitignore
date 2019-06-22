@@ -6,3 +6,4 @@ jspm_packages
 .serverless
 
 .DS_store
+chrome-aws-lambda
