@@ -4,6 +4,10 @@ provider:
   name: aws
   runtime: nodejs8.10
 
+package:
+  exclude:
+    - chrome-aws-lambda/**
+    - node_modules/puppeteer/.local-chromium/**
 
 plugins:
   - serverless-apigw-binary
@@ -12,7 +16,7 @@ plugins:
 custom:
   apigwBinary:
     types:
-      - 'image/png'
+      - '*/*'
 
 functions:
   puppeteer-orchestrator:
@@ -23,9 +27,8 @@ functions:
           path: /screenshot
           contentHandling: CONVERT_TO_BINARY
     layers:
-      - {Ref: ChromeLambdaLayer}
+      - { Ref: ChromeLambdaLayer }
 
 layers:
   chrome:
     path: layer
-

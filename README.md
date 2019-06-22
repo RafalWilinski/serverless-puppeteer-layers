@@ -8,9 +8,23 @@ This project example returns a screenshot of page requested via `?address=` quer
 
 ### Usage
 
-```sh
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn # This will NOT install headless chrome from Puppeteer library, we want it from layer instead
+It is very important to tell NPM to skip installing chromium from `puppeteer` package. To do so, installing dependencies should be done using this command:
 
+```sh
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm install
+```
+
+or
+
+```sh
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 yarn
+```
+
+Without this, your function size would be more than 200MB which is way too much.
+
+After that, you can simply deploy your funciton.
+
+```sh
 sls deploy
 
 curl <DEPLOYED_ENDPOINT>?address=https://google.com
