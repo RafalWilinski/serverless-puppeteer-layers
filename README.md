@@ -15,21 +15,11 @@ This project example returns a screenshot of page requested via `?address=` quer
 
 ### Usage
 
-It is very important to tell NPM to skip installing chromium from `puppeteer` package. To do so, installing dependencies should be done using this command:
+_Note_: this project uses `puppeteer-core` package rather than the standard `puppeteer` one. This is done in order to keep the function size in check - without this, your function size would be more than 200MB which is way too much. The difference between the two is [explained here](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteer-vs-puppeteer-core).
 
-```sh
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm install
-```
+Install the project dependencies with `npm install` or `yarn`.
 
-or
-
-```sh
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 yarn
-```
-
-Without this, your function size would be more than 200MB which is way too much.
-
-After that, you can simply deploy your funciton.
+After that, you can simply deploy your function.
 
 ```sh
 sls deploy
