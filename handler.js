@@ -1,5 +1,5 @@
 'use strict';
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 module.exports.index = async (event, context) => {
   try {
