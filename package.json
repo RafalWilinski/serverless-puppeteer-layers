@@ -4,7 +4,7 @@
   "description": "Recently AWS introduced [Layers](https://aws.amazon.com/about-aws/whats-new/2018/11/aws-lambda-now-supports-custom-runtimes-and-layers/) which enables sharing common code between functions and working with large dependencies (such as headless chrome) much easier.",
   "main": "handler.js",
   "dependencies": {
-    "puppeteer": "1.18.0",
+    "puppeteer-core": "1.18.0",
     "serverless-apigw-binary": "0.4.4",
     "serverless-apigwy-binary": "0.1.0"
   },
