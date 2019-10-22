@@ -1,12 +1,13 @@
 'use strict';
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
+const puppeteer = chromium.puppeteer;
 
 module.exports.index = async (event, context) => {
   try {
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: '/opt/headless_shell',
-      args: ['--no-sandbox', '--disable-gpu', '--single-process'],
+      executablePath: await chromium.executablePath,
+      args: chromium.args,
     });
 
     const page = await browser.newPage();
