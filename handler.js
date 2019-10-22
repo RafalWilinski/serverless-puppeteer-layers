@@ -3,8 +3,10 @@ const chromium = require('chrome-aws-lambda');
 const puppeteer = chromium.puppeteer;
 
 module.exports.index = async (event, context) => {
+  let browser = null;
   try {
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
+      defaultViewport:{width:1024,height:800},
       headless: true,
       executablePath: await chromium.executablePath,
       args: chromium.args,
@@ -20,8 +22,6 @@ module.exports.index = async (event, context) => {
       encoding: 'base64'
     });
 
-    browser.close();
-
     return {
       statusCode: 200,
       body: image,
@@ -35,5 +35,9 @@ module.exports.index = async (event, context) => {
     return {
       statusCode: 500
     };
+  }
+  finally{
+    if(browser)
+      await browser.close();
   }
 };
