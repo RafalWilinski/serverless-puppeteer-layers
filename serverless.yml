@@ -2,12 +2,13 @@ service: serverless-puppeteer-layers
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
 
 package:
   exclude:
+    - layer/**
     - chrome-aws-lambda/**
-    - node_modules/puppeteer/.local-chromium/**
+    - node_modules/chrome-aws-lambda/**
 
 plugins:
   - serverless-apigw-binary
@@ -33,4 +34,5 @@ functions:
 
 layers:
   chrome:
-    path: layer
+    package:
+      artifact: layer/chrome.zip    

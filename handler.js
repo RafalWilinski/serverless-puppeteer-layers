@@ -1,12 +1,15 @@
 'use strict';
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
+const puppeteer = chromium.puppeteer;
 
 module.exports.index = async (event, context) => {
+  let browser = null;
   try {
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
+      defaultViewport:{width:1024,height:800},
       headless: true,
-      executablePath: '/opt/headless_shell',
-      args: ['--no-sandbox', '--disable-gpu', '--single-process'],
+      executablePath: await chromium.executablePath,
+      args: chromium.args,
     });
 
     const page = await browser.newPage();
@@ -18,8 +21,6 @@ module.exports.index = async (event, context) => {
       clip: { x: 0, y: 0, width: 1024, height: 800 },
       encoding: 'base64'
     });
-
-    browser.close();
 
     return {
       statusCode: 200,
@@ -34,5 +35,9 @@ module.exports.index = async (event, context) => {
     return {
       statusCode: 500
     };
+  }
+  finally{
+    if(browser)
+      await browser.close();
   }
 };
